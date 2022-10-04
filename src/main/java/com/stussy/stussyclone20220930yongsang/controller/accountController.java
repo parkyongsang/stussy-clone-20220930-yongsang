@@ -1,6 +1,7 @@
 package com.stussy.stussyclone20220930yongsang.controller;
 
 
+import com.stussy.stussyclone20220930yongsang.dto.RegisterReqDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -13,7 +14,8 @@ public class accountController {
     }
 
     @GetMapping("/account/register")
-    public String register() {
+    public String register(RegisterReqDto registerReqDto) {
+        System.out.println(registerReqDto);
         return "account/register";
     }
 
