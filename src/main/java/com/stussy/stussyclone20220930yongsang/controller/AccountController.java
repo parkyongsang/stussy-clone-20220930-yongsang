@@ -23,7 +23,7 @@ public class AccountController {
     @GetMapping("/account/register")
     public String register(RegisterReqDto registerReqDto) {
         System.out.println(registerReqDto);
-        return "account/register";
+        return "account/product_registrations"; //
     }
 
 
