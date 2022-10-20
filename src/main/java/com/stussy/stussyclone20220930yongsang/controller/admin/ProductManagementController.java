@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class ProductManagementController {
 
-    @GetMapping("/product")
+    @GetMapping("/product/register")
     public String loadProductRegister() {
-        return "admin/registration";
+        return "admin/product_registration";
     }
 }
