@@ -200,8 +200,8 @@ class RegisterEventService {
                 category, name, price, simpleInfo, detailInfo, 
                 optionInfo, managementInfo, shippingInfo);
 
-            const ProductApi = new ProductApi();
-            if(ProductApi.createProductRequest(productMst.getObject())){
+            const productApi = new ProductApi();
+            if(productApi.createProductRequest(productMst.getObject())){
                 alert("상품 등록 완료")
                 location.reload();
             }

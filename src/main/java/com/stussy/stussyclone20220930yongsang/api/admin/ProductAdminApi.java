@@ -33,9 +33,9 @@ public class ProductAdminApi {
 
         for(int i=0; i<100; i++){
 
-            productRegisterReqDto.setCategory(i / 10 + i);
+            productRegisterReqDto.setCategory(i / 10 + 1);
             productRegisterReqDto.setName(name + (i + 1));
-            productRegisterReqDto.setPrice(random.nextInt(random.nextInt(10) + 1)* 100000);
+            productRegisterReqDto.setPrice((random.nextInt(10) + 1) * 100000);
             productManagementService.registerMst(productRegisterReqDto);
         }
 
@@ -48,5 +48,11 @@ public class ProductAdminApi {
     public ResponseEntity<?> getCategoryList() throws Exception {
         return ResponseEntity.ok()
                 .body(new CMRespDto<>("Get Successfully", productManagementService.getCategoryList()));
+    }
+
+    @GetMapping("/option/products/mst")
+    public ResponseEntity<?> getProductList() throws Exception {
+        return ResponseEntity.ok()
+                .body(new CMRespDto<>("Get Successfully", productManagementService.getProductMstList()));
     }
 }
